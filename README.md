@@ -1,3 +1,3 @@
 # Dr-Rio-Game
 
-![ ](Game/img/Collusion avec la map.JPG)
+![](Game/img/Collusion avec la map.JPG)
