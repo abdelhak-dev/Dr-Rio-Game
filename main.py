@@ -58,13 +58,13 @@ max_levels = 2
 font_name = pygame.font.match_font("comicsansms")
 
 #load images
-bg_img = pygame.image.load('back.jpg')
-win_img = pygame.image.load('you_win.png')
-restart_img = pygame.image.load('restart_btn.png')
-start_img = pygame.image.load('start_btn.png')
-pause_img = pygame.image.load('pause_btn.png')
+bg_img = pygame.image.load('./img/back.jpg')
+win_img = pygame.image.load('./img/you_win.png')
+restart_img = pygame.image.load('./img/restart_btn.png')
+start_img = pygame.image.load('./img/start_btn.png')
+pause_img = pygame.image.load('./img/pause_btn.png')
 #logo_standing = pygame.image.load('standing.png')
-exit_img = pygame.image.load('exit_btn.png')
+exit_img = pygame.image.load('./img/exit_btn.png')
 
 
 
@@ -246,11 +246,11 @@ class Player():
 			self.images_left.append(img_right)
 			self.images_right.append(img_left)
 		# Lose_Level image + scale image
-		self.dead_image = pygame.image.load('ghost.png')
+		self.dead_image = pygame.image.load('./img/ghost.png')
 		self.dead_image = pygame.transform.scale(self.dead_image, (60, 110))
 
 		# Win_Level image + scale image
-		self.win_image = pygame.image.load('you_win.png')
+		self.win_image = pygame.image.load('./img/you_win.png')
 		self.win_image = pygame.transform.scale(self.dead_image, (100, 110))
 
 		self.image = self.images_right[self.index]
@@ -289,8 +289,8 @@ class World():
 		self.tile_list = []
 
 		#load images
-		dirt_img = pygame.image.load('dirt.png')
-		grass_img = pygame.image.load('grass.png')
+		dirt_img = pygame.image.load('./img/dirt.png')
+		grass_img = pygame.image.load('./img/grass.png')
 
 		row_count = 0
 		for row in data:
@@ -333,7 +333,7 @@ class World():
 class Enemy(pygame.sprite.Sprite):
 	def __init__(self, x,y):
 		pygame.sprite.Sprite.__init__(self)
-		self.image = pygame.image.load('R1E.png')
+		self.image = pygame.image.load('./img/R1E.png')
 		self.rect = self.image.get_rect()
 		self.rect.x = x
 		self.rect.y = y
@@ -355,7 +355,7 @@ class Enemy(pygame.sprite.Sprite):
 class Lava(pygame.sprite.Sprite):
 	def __init__(self, x, y):
 		pygame.sprite.Sprite.__init__(self)
-		img = pygame.image.load('Lava_1.png')
+		img = pygame.image.load('./img/Lava_1.png')
 		self.image = pygame.transform.scale(img, (tile_size, tile_size // 1))
 		self.rect = self.image.get_rect()
 		self.rect.x = x
@@ -364,7 +364,7 @@ class Lava(pygame.sprite.Sprite):
 class Coins(pygame.sprite.Sprite):
 	def __init__(self, x, y):
 		pygame.sprite.Sprite.__init__(self)
-		img = pygame.image.load('Coins.png')
+		img = pygame.image.load('./img/Coins.png')
 		self.image = pygame.transform.scale(img, (tile_size, tile_size ))
 		self.rect = self.image.get_rect()
 		self.rect.x = x
@@ -374,7 +374,7 @@ class Coins(pygame.sprite.Sprite):
 class Exit(pygame.sprite.Sprite):
 	def __init__(self, x, y):
 		pygame.sprite.Sprite.__init__(self)
-		img = pygame.image.load('exit.png')
+		img = pygame.image.load('./img/exit.png')
 		self.image = pygame.transform.scale(img, (tile_size , int(tile_size + 12)))
 		self.rect = self.image.get_rect()
 		self.rect.x = x
